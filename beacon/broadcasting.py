@@ -37,10 +37,10 @@ class trafficSignal:
         else:
             signalStr = "52 "
 
-        Ten = hex(self.leftTime // 10)
-        One = hex(self.leftTime % 10)
-        str = defaultStr + traffic +signalStr + Ten + " " + One
-        os.system(str)
+        Ten = str(self.leftTime // 10 + 30)
+        One = str(self.leftTime % 10 + 30)
+        sendStr = defaultStr + traffic +signalStr + Ten + " " + One
+        os.system(sendStr)
 
     def changeTurn(self):
         if self.getSignal() == "R":
